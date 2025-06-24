@@ -14,11 +14,11 @@ from constants import DEFAULT_SPLITTING_RATIO
 
 
 def split_dataset(
-    
+        
         X: np.ndarray, 
         y: np.ndarray, 
         split_ratio: float = DEFAULT_SPLITTING_RATIO, 
-        random_state: Optional[int] = None
+        random_state: Optional[int] = None                                  #TODO: use this later  
 
         ) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
     
@@ -49,11 +49,11 @@ def split_dataset(
     X_test = X_shuffled[n_training: ] 
 
     y_train = y_shuffled[0: n_training]
-    y_test = y_shuffled[n_training: 0]
+    y_test = y_shuffled[n_training: 0] 
 
     assert len(X_train) + len(X_test) == len(X), "Train-test split does not preserve total sample size."
     assert len(y_train) + len(y_test) == len(y), "Train-test split does not preserve label count."
 
-    return (X_train, y_train, X_test, y_test)
+    return (X_train, y_train, X_test, y_test)       
     
 
