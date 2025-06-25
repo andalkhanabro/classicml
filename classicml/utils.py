@@ -1,7 +1,7 @@
 """
 classicml.utils 
 
-These are model agnostic methods that are required for ML workflows (e.g splitting [ADD Later]).
+These are model agnostic methods that are required for ML workflows (e.g splitting, [ADD Later]).
 
 Author: Andal Abro
 
@@ -10,8 +10,7 @@ Author: Andal Abro
 import numpy as np
 from typing import Optional, Tuple
 
-from constants import DEFAULT_SPLITTING_RATIO
-
+from .constants import DEFAULT_SPLITTING_RATIO
 
 def split_dataset(
         
@@ -56,4 +55,23 @@ def split_dataset(
 
     return (X_train, y_train, X_test, y_test)       
     
+
+# TODO: make distributions a separate module?
+
+class Gaussian():
+
+    def __init__(self, mean, variance):
+        self.mean = mean
+        self.variance = variance
+
+    def PDF(self, x):
+        if self.mean is None or self.variance is None:
+            raise NotImplementedError("PDF is not defined yet.")
+
+        else:
+
+            return (1/(np.sqrt(2 * np.pi * self.variance))) * np.exp(-1 * 0.5 * ((x - self.mean)**2/ self.variance))
+
+
+
 
