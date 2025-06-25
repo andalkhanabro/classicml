@@ -43,7 +43,7 @@ def split_dataset(
 
     # dividing the data by reading first (1-TEST_RATIO)% indices of X and y 
 
-    n_training = int((1-split_ratio) * n_samples) # so 0.75 *100 means 75 rows for training, 25 for testing out of 100. DETAIL: casted to int for slicing 
+    n_training = int((1-split_ratio) * n_samples)  # so 0.75 *100 means 75 rows for training, 25 for testing out of 100. DETAIL: casted to int for slicing 
 
     X_train = X_shuffled[0: n_training]
     X_test = X_shuffled[n_training: ] 
