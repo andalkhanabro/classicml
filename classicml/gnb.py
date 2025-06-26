@@ -7,10 +7,8 @@ Author: Andal Abro
 
 """
 
-
 import numpy as np
 
-from .base_model import Model
 from .naivebayes import NaiveBayes
 from .utils import Gaussian
 
@@ -78,7 +76,9 @@ class GaussianNaiveBayes(NaiveBayes):
         return max(class_scores, key=class_scores.get) # max (unnormalised) score [proportional to probability]
     
     def predict(self, X):
+
         #TODO: implement for batch prediction (several input vectors!)
+        
         pass 
     
     
