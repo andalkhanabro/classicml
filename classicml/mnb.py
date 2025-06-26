@@ -109,6 +109,13 @@ class MultinomialNaiveBayes(NaiveBayes):
 
         return max(scores_per_label, key=scores_per_label.get)          # returns label with max posterior (unnormalised) probability 
     
+    def predict(self, X):
+
+        #TODO: implement for batch prediction (several input vectors!)
+        
+        pass 
+    
+    
 
 
 
