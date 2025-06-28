@@ -7,7 +7,6 @@ Author: Andal Abro
 
 """
 
-
 from classicml.base_model import Model
 
 class NaiveBayes(Model):
